@@ -2,7 +2,7 @@ name: Internal Bug Report
 description: File an internal bug report.
 title: "[Bug]: "
 labels: ["bug", "triage"]
-projects: ["VoluteGames/2"]
+projects: ["Roblox"]
 body:
   - type: dropdown
     id: service
