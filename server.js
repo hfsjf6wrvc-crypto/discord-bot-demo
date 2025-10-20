@@ -23,3 +23,5 @@ app.get("/auth/google/callback", (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
+require("./bot.js");
