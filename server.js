@@ -48,7 +48,8 @@ client.login(DISCORD_TOKEN);
 const ROLE_TO_GROUP = {
   // Example:
   "1409109293130715227": "sovcommand@arcticclawofficial.com",
-  "1409109530331316254": "sovcommand@arcticclawofficial.com"
+  "1409109530331316254": "sovcommand@arcticclawofficial.com",
+  "1409109293130715227": "sovoverseer@arcticclawofficial.com"
 };
 
 // ---------------------
