@@ -1,3 +1,30 @@
+[
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Home route
+app.get("/", (req, res) => {
+  res.send("✅ Server is running successfully!");
+});
+
+// Example route for Google OAuth callback
+app.get("/auth/google/callback", (req, res) => {
+  res.send("Google OAuth callback reached!");
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
+]
+
 {
   "name": "discord-bot-demo",
   "version": "1.0.0",
