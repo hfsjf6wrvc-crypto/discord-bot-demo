@@ -1,0 +1,60 @@
+name: Internal Bug Report
+description: File an internal bug report.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+projects: ["Roblox"]
+body:
+  - type: dropdown
+    id: service
+    attributes:
+      label: Which service does the bug relate to?
+      multiple: false
+      options:
+        - 💂 Buckingham Palace
+        - Volute Discord Bot
+        - Volute Forums
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: What version are you experiencing this in?
+      multiple: false
+      options:
+        - Development
+        - Production
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How severe is the bug?
+      multiple: false
+      options:
+        - Critical
+        - High
+        - Moderate
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Brief Explanation
+      description: What is the bug?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide steps on how to reproduce the bug (to the best of your knowledge)
+    validations:
+      required: true
+  - type: textarea
+    id: media
+    attributes:
+      label: Relevant Media
+      description: Please provide any media (screenshots, gifs, videos) relevant to the bug report
+    validations:
+      required: false
