@@ -13,7 +13,8 @@
     "discord.js": "^14.23.2",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "googleapis": "^164.0.0",
-    "node-fetch": "^2.7.0"
+    "googleapis": "^164.1.0",
+    "node-fetch": "^2.7.0",
+    "sqlite3": "^5.1.7"
   }
 }
