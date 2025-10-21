@@ -111,8 +111,8 @@ app.get("/auth/google/callback", async (req, res) => {
     const { email: googleEmail } = await userInfoRes.json();
 
     // Get Discord roles
-    const guild = await client.guilds.nodefetch(GUILD_ID);
-    const member = await guild.members.nodefetch(discordId);
+    const guild = await client.guilds.fetch(GUILD_ID);
+    const member = await guild.members.fetch(discordId);
     const roleIds = new Set(member.roles.cache.map((r) => r.id));
 
     // Build desired group list
