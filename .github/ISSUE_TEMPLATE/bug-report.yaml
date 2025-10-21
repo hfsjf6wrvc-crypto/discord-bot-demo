@@ -8,7 +8,7 @@ body:
     id: service
     attributes:
       label: Which service does the bug relate to?
-      multiple: false
+      multiple: fals
       options:
         - 💂 Buckingham Palace
         - Volute Discord Bot
