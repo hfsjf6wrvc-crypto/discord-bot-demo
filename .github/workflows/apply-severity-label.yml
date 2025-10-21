@@ -1,0 +1,38 @@
+name: Apply Severity Label
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  apply-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get issue form data
+        uses: actions-ecosystem/action-json-to-variables@v1
+        with:
+          json: ${{ toJson(github.event.issue) }}
+
+      - name: Apply severity label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: contains(github.event.issue.body, 'Critical')
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: Critical
+
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: contains(github.event.issue.body, 'High')
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: High
+
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: contains(github.event.issue.body, 'Moderate')
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: Moderate
+
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: contains(github.event.issue.body, 'Low')
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: Low
