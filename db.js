@@ -28,4 +28,9 @@ function getUser(discordId) {
     db.get(
       `SELECT googleEmail FROM users WHERE discordId = ?`,
       [discordId],
-      (err, row) => (err ? reject(err) : resolve(row ? row.googleEmail :
+      (err, row) => (err ? reject(err) : resolve(row ? row.googleEmail : null))
+    );
+  });
+}
+
+module.exports = { saveUser, getUser };
