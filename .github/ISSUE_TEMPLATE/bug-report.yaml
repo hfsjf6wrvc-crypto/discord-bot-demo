@@ -4,7 +4,7 @@ title: "[Bug]: "
 labels: ["bug"]
 projects: ["Roblox"]
 body:
-  - type: 
+  - type: dropdown
     id: service
     attributes:
       label: Which service does the bug relate to?
