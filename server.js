@@ -3,7 +3,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const nodefetch = require("node-fetch");
+const nodeFetch = require("node-fetch");
 const { google } = require("googleapis");
 const { Client, GatewayIntentBits } = require("discord.js");
 require("dotenv").config();
@@ -90,7 +90,7 @@ app.get("/auth/google/callback", async (req, res) => {
     const discordId = req.query.state;
 
     // Exchange code for tokens
-    const tokenRes = await nodefetch("https://oauth2.googleapis.com/token", {
+    const tokenRes = await nodeFetch("https://oauth2.googleapis.com/token", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
@@ -105,7 +105,7 @@ app.get("/auth/google/callback", async (req, res) => {
     const accessToken = tokenData.access_token;
 
     // Get Google email
-    const userInfoRes = await nodefetch("https://www.googleapis.com/oauth2/v2/userinfo", {
+    const userInfoRes = await nodeFetch("https://www.googleapis.com/oauth2/v2/userinfo", {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
     const { email: googleEmail } = await userInfoRes.json();
